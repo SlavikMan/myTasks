@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monda&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="clouds">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+
+      <header class="header">
+        <div class="header__container _container"></div>
+
+        <h1 class="header__text">My Tasks</h1>
+
+        <form action="" class="header__form">
+          <input
+            type="text"
+            class="form__title"
+            id="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            class="form__desc"
+            id="desc"
+            placeholder="Description"
+          />
+          <div class="but">
+            <button class="form__submit" id="form__add-task">Add</button>
+          </div>
+        </form>
+      </header>
+      <ul class="list">
+        <!-- Done -->
+        <li class="list__task">
+          <a href="#"
+            ><i class="bi bi-check2-circle" style="font-size: 23px"></i>
+          </a>
+          <a href="#"
+            ><i class="bi bi-pencil-square" style="font-size: 23px"></i>
+          </a>
+          <a href="#"
+            ><i class="bi bi-trash bin" style="font-size: 23px"></i>
+          </a>
+          <div class="list__task-title done">Task #1</div>
+          <div class="list__task-description">Task #1 Description:</div>
+        </li>
+        <!-- In progress -->
+        <li class="list__task">
+          <a href="#"><i class="bi bi-circle" style="font-size: 21px"></i> </a>
+          <a href="#"
+            ><i class="bi bi-pencil-square pencil" style="font-size: 23px"></i>
+          </a>
+          <a href="#"
+            ><i class="bi bi-trash bin tra" style="font-size: 23px"></i>
+          </a>
+          <div class="list__task-title inProgress">Task #1</div>
+          <div class="list__task-description inProgress-desc">
+            Task #1 Description:
+          </div>
+        </li>
+      </ul>
+      <footer class="funcs">
+        <a href="#"
+          ><i class="bi bi-info-circle" style="font-size: 20px"></i
+        ></a>
+        <a href="#"><i class="bi bi-share" style="font-size: 20px"></i></a>
+        <a href="#"><i class="bi bi-textarea-t" style="font-size: 20px"></i></a>
+        <a href="#"><i class="bi bi-sort-down" style="font-size: 23px"></i></a>
+        <a href="#"><i class="bi bi-trash" style="font-size: 20px"></i> </a>
+      </footer>
+    </div>
+  </body>
+</html>
