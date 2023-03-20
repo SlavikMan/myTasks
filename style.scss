@@ -1,19 +1,58 @@
-@import "nullstyle.scss";
+@import "normalize.scss";
 
 body {
-  min-height: 100%;
+  // min-height: 100%;
   font-family: "Monda";
   display: flex;
   flex-direction: column;
-  .wrapper {
-    min-height: 100%;
-    overflow: hidden;
-    max-width: 816px;
-    margin: 0 auto;
-    position: relative;
-  }
+  min-height: 100%;
+  // overflow: hidden;
+  max-width: 816px;
+  margin: 0 auto;
+  position: relative;
 }
 // =======CLOUDS=============================
+
+// .cloud {
+//   position: absolute;
+//   width: 487.07px;
+//   height: 210px;
+//   width: 547.07px;
+//   height: 240px;
+//   border-radius: 50%;
+//   background-color: #acd4e1;
+//   right: 600px;
+//   top: -112px;
+//   box-shadow: 20px 40px #c8e3ec;
+// }
+
+// .cloud:before {
+//   content: "";
+//   position: absolute;
+//   width: 487.07px;
+//   height: 252px;
+//   width: 547.07px;
+//   height: 302px;
+//   border-radius: 50%;
+//   background-color: #acd4e1;
+//   right: -242px;
+//   right: -308px;
+//   top: 0px;
+// }
+// .cloud:after {
+//   content: "";
+//   position: absolute;
+//   width: 487.07px;
+//   height: 252px;
+//   width: 547.07px;
+//   height: 302px;
+//   border-radius: 50%;
+//   right: -242px;
+//   right: -308px;
+//   top: 0px;
+//   box-shadow: -10px 40px #c8e3ec;
+//   z-index: -1;
+// }
 
 .right::before {
   content: "";
@@ -81,12 +120,12 @@ form {
   height: 49px;
   background: #a8d2a5;
   padding-left: 27px;
-
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 29px;
 }
+
 .form__desc {
   margin-top: 26px;
   width: 816px;
@@ -98,9 +137,9 @@ form {
   font-size: 18px;
   line-height: 29px;
 }
-.but {
-  display: flex;
-  justify-content: center;
+.button {
+  display: block;
+  margin: auto;
   margin-top: 21px;
 }
 .form__submit {
@@ -119,11 +158,18 @@ form {
   //position: absolute;
   //left: 30%;
 }
+.active {
+  font-size: 50px;
+}
+// .active {
+//   background-color: #8df286;
+// }
 
 // =====LIST===================================
 
 .list {
   margin-top: 29px;
+  // margin-left: 5px;
 }
 .list__task-title {
   position: relative;
@@ -134,30 +180,30 @@ form {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  text-decoration-line: line-through;
-  color: #c4c4c4;
+  color: #3e3b3b;
   line-height: 37px;
   border-bottom: 2px solid #3e3b3b;
-  box-shadow: 0px 4px 4px #c8e3ec;
+  // box-shadow: 0px 4px 4px #c8e3ec;
 }
 
 .bi-check2-circle {
   position: absolute;
-  z-index: 5;
-  top: 56.5%;
+  margin-top: 1%;
+  z-index: 1;
+  color: #156b2d;
 }
 .bi-pencil-square {
   position: absolute;
-  z-index: 5;
-  top: 56.5%;
-  left: 89%;
+  z-index: 1;
+  margin-left: 89%;
+  margin-top: 1%;
   color: #156b2d;
 }
 
 .bin {
   position: absolute;
-  z-index: 5;
-  top: 56.5%;
+  z-index: 1;
+  margin-top: 1%;
   left: 95%;
   color: #bc0808;
 }
@@ -168,12 +214,16 @@ form {
   font-weight: 400;
   font-size: 14px;
   line-height: 23px;
-  text-decoration-line: line-through;
-  color: #c4c4c4;
+  color: #3e3b3b;
   margin-top: 5px;
   margin-bottom: 28px;
 }
-
+.done {
+  color: #c4c4c4;
+  text-decoration-line: line-through;
+  opacity: 0.5;
+}
+// ======================================
 .inProgress {
   font-family: "Monda";
   font-style: normal;
@@ -193,7 +243,7 @@ form {
 }
 .bi-circle {
   position: absolute;
-  top: 69.8%;
+  margin-top: 1%;
 }
 
 .pencil {
@@ -204,17 +254,10 @@ form {
   color: #156b2d;
 }
 
-.tra {
-  position: absolute;
-  z-index: 5;
-  top: 69.9%;
-  left: 95%;
-  color: #bc0808;
-}
 // ========FOOTER==============================
 footer {
   position: fixed;
-  left: 0;
+  // left: 0;
   bottom: 0;
   background: #acd4e1;
   display: flex;
@@ -222,7 +265,8 @@ footer {
   align-items: center;
   width: 816px;
   height: 71px;
-  margin-left: 23.5%;
+  z-index: 5;
+  // margin-left: 23.5%;
   & .bi {
     padding-right: 60px;
   }
