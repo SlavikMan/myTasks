@@ -19,7 +19,6 @@
   </head>
   <body>
     <!-- <div class="wrapper"> -->
-
     <header class="header">
       <div class="cloud">
         <div class="left"></div>
@@ -28,7 +27,7 @@
 
       <h1 class="header__text">My Tasks</h1>
 
-      <form action="" class="header__form" onsubmit="form__add-task">
+      <form action="" class="header__form" id="add-task">
         <input
           type="text"
           class="form__title"
@@ -41,10 +40,9 @@
           class="form__desc"
           id="desc"
           placeholder="Description"
+          required
         />
-        <button type="button" class="button form__submit" id="add-task">
-          Add
-        </button>
+        <button type="submit" class="button form__submit">Add</button>
       </form>
     </header>
 
