@@ -14,7 +14,7 @@ const baseData = [
     id: 13134356,
     title: "Wolk with dog",
     desc: "cjvjvjv",
-    isDone: true,
+    isDone: false,
   },
 ];
 
@@ -31,46 +31,45 @@ function addTask(event) {
   };
   baseData.push(newTask);
 
-  // const currTask = `<li class="list__task" key = ${newTask.id} >
-  // <button type="button" data-action="done" class="task-btn" id="btn-cossout" >
-  // <i class="check-true bi bi-check2-circle" style="font-size: 23px"></i>
-  // </i></button>
-  //   <a href="#"
-  //      ><i class="bi-pencil-square bi" style="font-size: 23px"></i>
-  //   </a>
-  //   <a href="#"><i class="bin bi-trash bi" id="bin" style="font-size: 23px"></i> </a>
-  //   <div class="list__task-title " id="title-list">${todoInput.value}</div>
-  //   <div class="list__task-description done">${todoDesc.value}</div>
-  // </li>`;
   render(baseData);
-  // if (todoInput.value == "") {
-  //   return;
-  // }
-  // list.innerHTML += currTask;
+
   todoInput.value = "";
   todoDesc.value = "";
   console.log(baseData);
 }
 
 function onCheck(event) {
-  console.log("onCheck", event.target.options);
-  event.preventDefault();
-  console.log(event.target.dataset);
-  if (event.target.dataset.action === "done") {
-    const parentNode = event.target.closest("list__task");
+  const taskElement = event.target.closest(".list__task");
+  const taskId = parseInt(taskElement.getAttribute("key"));
+  const task = baseData.find((task) => task.id === taskId);
+  console.log(task);
 
-    const id = baseData(parentNode.id);
-    const task = baseData.find((task) => task.id === id);
-
-    task.done = !task.done;
-
-    const taskTitle = parentNode.querySelector(".list__task-title");
-    const taskDescription = parentNode.querySelector(".list__task-description");
-
-    taskTitle.classList.toggle("done");
-    taskDescription.classList.toggle("done");
-  }
+  task.isDone = !task.isDone;
+  const taskTitle = taskElement.querySelector(".list__task-title");
+  const taskDescription = taskElement.querySelector(".list__task-description");
+  taskElement.classList.toggle("done");
+  // taskDescription.classList.toggle("done");
 }
+
+// function onCheck(event) {
+//   console.log("onCheck", event.target.id);
+//   event.preventDefault();
+//   console.log(event.target.dataset);
+//   if (event.target.dataset.action === "done") {
+//     const parentNode = event.target.closest(".list__task");
+
+//     const id = baseData[parentNode.id];
+//     const task = baseData.find((task) => task.id === id);
+
+//     task.done = !task.done;
+
+//     const taskTitle = parentNode.querySelector(".list__task-title");
+//     const taskDescription = parentNode.querySelector(".list__task-description");
+
+//     taskTitle.classList.toggle("done");
+//     taskDescription.classList.toggle("done");
+//   }
+// }
 
 // function actionsList(event) {
 //   item = event.target;
@@ -95,9 +94,9 @@ function render() {
   list.innerHTML = "";
   baseData.forEach((task) => {
     const renderTamplateTask = `<li class="list__task " key =${task.id}>
-    <button type="button" data-action="done" class="task-btn" id="btn-cossout" >
+    
     <i class="check-true bi bi-check2-circle"  data-action="done" style="font-size: 23px" ></i>
-    </i></button>
+    </i>
       <a href="#"
          ><i class="bi-pencil-square bi" style="font-size: 23px"></i>
       </a>
