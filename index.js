@@ -1,8 +1,8 @@
-let button = document.getElementById("add-task");
-let list = document.getElementById("list");
-let todoInput = document.getElementById("title");
-let todoDesc = document.getElementById("desc");
-let title = document.getElementById("title-list");
+const button = document.getElementById("add-task");
+const list = document.getElementById("list");
+const todoInput = document.getElementById("title");
+const todoDesc = document.getElementById("desc");
+const title = document.getElementById("title-list");
 
 list.addEventListener("click", onCheck);
 button.addEventListener("submit", addTask);
@@ -42,7 +42,6 @@ function onCheck(event) {
   const taskElement = event.target.closest(".list__task");
   const taskId = parseInt(taskElement.getAttribute("key"));
   const task = baseData.find((task) => task.id === taskId);
-  console.log(task);
   task.isDone = !task.isDone;
   taskElement.classList.toggle("done");
 }
@@ -52,35 +51,42 @@ function deleteTask(event) {
   let taskTitle = event.target.closest(".list__task");
   let taskId = parseInt(taskTitle.getAttribute("key"));
   const taskIndex = baseData.findIndex((task) => task.id === taskId);
-  console.log(taskIndex);
+
   baseData.splice(taskIndex, 1);
   taskTitle.innerHTML = "";
 }
 
 function editTask2(event) {
   if (event.target.dataset.action !== "edit") return;
-  let taskEl = document.querySelector(".list__task");
+  let taskEl = event.target.closest(".list__task");
   let taskId = parseInt(taskEl.getAttribute("key"));
-  let taskBase = baseData.find((task) => task.id === taskId);
-  let title = document.querySelector(".list__task-title");
-  let desc = document.querySelector(".list__task-description");
+  let currTask = baseData.find((task) => task.id === taskId);
+  console.log(currTask);
 
-  title.contentEditable = true;
-  title.style.backgroundColor = "#e6e8ea";
-  desc.contentEditable = true;
-  desc.style.backgroundColor = "#e6e8ea";
+  const editedTaskValue = {
+    title: taskEl.querySelector(".list__task-title"),
+    desc: taskEl.querySelector(".list__task-description"),
+  };
 
-  title.addEventListener("blur", () => {
-    taskBase.title = title.textContent;
-    taskBase.desc = desc.textContent;
+  taskEl.querySelector(".list__task-title").contentEditable = true;
+  taskEl.querySelector(".list__task-title").style.backgroundColor = "#e6e8ea";
+  taskEl.querySelector(".list__task-description").contentEditable = true;
+  taskEl.querySelector(".list__task-description").style.backgroundColor =
+    "#e6e8ea";
+
+  document.querySelector(".list__task-title").addEventListener("blur", () => {
+    currTask.title = editedTaskValue.title.innerText;
+    currTask.desc = editedTaskValue.desc.innerText;
     render();
   });
-  desc.addEventListener("blur", () => {
-    taskBase.title = title.textContent;
-    taskBase.desc = desc.textContent;
-    render();
-  });
-  console.log(baseData);
+
+  document
+    .querySelector(".list__task-description")
+    .addEventListener("blur", () => {
+      currTask.title = editedTaskValue.title.innerText;
+      currTask.desc = editedTaskValue.desc.innerText;
+      render();
+    });
 }
 
 function render() {
