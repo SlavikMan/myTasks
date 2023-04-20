@@ -1,5 +1,13 @@
 import { dataBase } from "../index.js";
+import {
+  postAddTask,
+  postDeleteTask,
+  postEditTask,
+  postOnCheck,
+} from "./postRequests.js";
 import { button, list, todoInput, todoDesc, title } from "./elements.js";
+const url = "http://localhost:3000/tasks";
+
 const functions = {
   addTask: function (event) {
     event.preventDefault();
@@ -11,7 +19,7 @@ const functions = {
       isDone: false,
     };
     dataBase.push(newTask);
-
+    postAddTask("Post", url, newTask);
     render(dataBase);
     console.log(dataBase);
     todoInput.value = "";
@@ -25,6 +33,7 @@ const functions = {
     const task = dataBase.find((task) => task.id === taskId);
     task.isDone = !task.isDone;
     taskElement.classList.toggle("done");
+    postOnCheck(taskId, task.isDone);
   },
 
   deleteTask: function (event) {
@@ -35,6 +44,7 @@ const functions = {
 
     dataBase.splice(taskIndex, 1);
     taskTitle.innerHTML = "";
+    postDeleteTask(taskId);
   },
 
   editTask2: function (event) {
@@ -58,6 +68,7 @@ const functions = {
       currTask.title = editedTaskValue.title.innerText;
       currTask.desc = editedTaskValue.desc.innerText;
       render();
+      postEditTask(taskId, currTask.title, currTask.desc);
     });
 
     taskEl
@@ -66,12 +77,16 @@ const functions = {
         currTask.title = editedTaskValue.title.innerText;
         currTask.desc = editedTaskValue.desc.innerText;
         render();
+        postEditTask(taskId, currTask.title, currTask.desc);
       });
   },
+
   render: function () {
     list.innerHTML = "";
     dataBase.forEach((task) => {
-      const renderTamplateTask = `<li class="list__task " key =${task.id}>
+      const renderTamplateTask = `<li class="list__task ${
+        task.isDone ? "done" : ""
+      }"  key =${task.id}>
       <i class="check-true bi bi-check2-circle" data-action="check" style="font-size: 23px" ></i>
       <i class="bi-pencil-square bi" data-action="edit" style="font-size: 23px"></i>
       <i class="bin bi-trash bi" data-action="delete" id="bin" style="font-size: 23px"></i>

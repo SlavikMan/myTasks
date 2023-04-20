@@ -1,13 +1,5 @@
-const elems = {
-  button: document.getElementById("add-task"),
-  list: document.getElementById("list"),
-  todoInput: document.getElementById("title"),
-  todoDesc: document.getElementById("desc"),
-  title: document.getElementById("title-list"),
-};
-
-export const button = elems.button;
-export const list = elems.list;
-export const todoInput = elems.todoInput;
-export const todoDesc = elems.todoDesc;
-export const title = elems.title;
+export const button = document.getElementById("add-task");
+export const list = document.getElementById("list");
+export const todoInput = document.getElementById("title");
+export const todoDesc = document.getElementById("desc");
+export const title = document.getElementById("title-list");

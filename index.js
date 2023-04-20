@@ -17,21 +17,15 @@ list.addEventListener("click", onCheck);
 button.addEventListener("submit", addTask);
 list.addEventListener("click", deleteTask);
 list.addEventListener("click", editTask2);
+// localStorage // балкон
+const dataBase = []; // storage    холодильник
+const url = "http://localhost:3000/tasks"; // security server ATB
 
-const dataBase = [];
-const url = "http://localhost:3000/tasks";
-
-async function getData() {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    dataBase.push(...data);
-    render();
-  } catch (error) {
-    console.log(error);
-  }
-}
-getData();
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => dataBase.push(...data))
+  .then(() => render())
+  .catch((e) => console.log(e));
 
 // const axios = require("axios");
 
