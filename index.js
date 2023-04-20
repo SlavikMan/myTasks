@@ -43,3 +43,4 @@ fetch(url)
 
 render();
 export { dataBase };
+console.log("dfd");
