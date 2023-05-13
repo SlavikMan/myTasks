@@ -1,0 +1,27 @@
+{
+  "name": "mytasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  " transform": {
+    " ^.+\\.ts?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlavikMan/myTasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SlavikMan/myTasks/issues"
+  },
+  "homepage": "https://github.com/SlavikMan/myTasks#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}

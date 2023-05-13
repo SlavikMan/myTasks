@@ -47,41 +47,42 @@
         <button type="submit" class="button form__submit">Add</button>
       </form>
     </header>
-    <ul class="list" id="list">
-      <!-- <li class="list__task">
-        <a href="#"
-          ><i class="bi bi-check2-circle" style="font-size: 23px"></i>
-        </a>
-        <a href="#"
-          ><i class="bi bi-pencil-square" style="font-size: 23px"></i>
-        </a>
-        <a href="#"><i class="bi-trash bi  bin" style="font-size: 23px"></i> </a>
-        <input class="list__task-title done">Task #1</input>
-        <input class="list__task-description">Task #1 Description:</input>
-      </li>
-    
-      <li class="list__task">
-        <a href="#"><i class="bi bi-circle" style="font-size: 21px"></i> </a>
-        <input type="checkbox" class="check" id="chech" checked>
-        <a href="#"
-          ><i class="bi bi-pencil-square pencil" style="font-size: 23px"></i>
-        </a>
-        <a href="#"
-          ><i class="bi bi-trash bin tra" style="font-size: 23px"></i>
-        </a>
-        <div class="list__task-title inProgress">Task #1</div>
-        <div class="list__task-description inProgress-desc">
-          Task #1 Description:
-        </div>
-      </li> -->
-    </ul>
 
-    <footer class="funcs">
+    <main id="main" class="main blur">
+      <div class="selector-container">
+        <select class="sort-selector hide" id="sort-selector"></select>
+        <div class="icon-container arrow hide">
+          <i class="bi bi-arrow-bar-down"></i>
+        </div>
+      </div>
+      <div class="delete-warning">
+        <h1 class="title-warning">Do you want to delete all the tasks?</h1>
+        <div class="btn-approval">
+          <button class="agree">Yes</button>
+          <button class="disagree">No</button>
+        </div>
+      </div>
+      <ul class="list" id="list"></ul>
+    </main>
+
+    <footer class="funcs" id="footer">
       <a href="#"><i class="bi bi-info-circle" style="font-size: 20px"></i></a>
       <a href="#"><i class="bi bi-share" style="font-size: 20px"></i></a>
       <a href="#"><i class="bi bi-textarea-t" style="font-size: 20px"></i></a>
-      <a href="#"><i class="bi bi-sort-down" style="font-size: 23px"></i></a>
-      <a href="#"><i class="bi bi-trash" style="font-size: 20px"></i> </a>
+      <a href="#"
+        ><i
+          class="bi bi-sort-down"
+          data-action="filter"
+          style="font-size: 23px"
+        ></i
+      ></a>
+      <a href="#"
+        ><i
+          class="bi bi-trash"
+          data-action="deleteAll"
+          style="font-size: 20px"
+        ></i>
+      </a>
     </footer>
     <!-- </div> -->
     <script type="module" src="index.js"></script>
