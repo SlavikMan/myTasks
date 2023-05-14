@@ -48,25 +48,60 @@
       </form>
     </header>
 
-    <main id="main" class="main blur">
-      <div class="selector-container">
-        <select class="sort-selector hide" id="sort-selector"></select>
-        <div class="icon-container arrow hide">
-          <i class="bi bi-arrow-bar-down"></i>
+    <main id="main" class="main">
+      <div class="info-text hide" id="info_text">
+        <div class="info-text__container">
+          <h1 class="title-representation">About my pet project</h1>
+          <p class="text-representation">
+            My pet project is a simple and intuitive to-do list application that
+            I developed using SCSS, HTML, and native JavaScript. The goal of the
+            project was to create a tool that would help me organize my daily
+            tasks more efficiently. <br /><br />
+            One of the features that I am most proud of is the clean and
+            user-friendly interface of the application. The application is
+            designed with a minimalistic and modern approach that allows for an
+            easy and intuitive user experience. The application is optimized for
+            both desktop and mobile devices, allowing for seamless integration
+            into my daily routine. <br /><br />
+            To store the to-do list data, I used a JSON server that allows for
+            easy data management and manipulation. The JSON server also allows
+            for data persistence, ensuring that my to-do list remains available
+            even if I close or refresh the application. <br /><br />
+            Overall, I am incredibly satisfied with the outcome of the project.
+            It has allowed me to better organize my daily tasks and has been an
+            excellent tool for increasing productivity and time management.
+          </p>
         </div>
       </div>
-      <div class="delete-warning">
-        <h1 class="title-warning">Do you want to delete all the tasks?</h1>
-        <div class="btn-approval">
-          <button class="agree">Yes</button>
-          <button class="disagree">No</button>
+      <div class="info_conatiner" id="info_conatiner">
+        <div class="selector-container hide" id="selector-container">
+          <select class="sort-selector" id="sort-selector"></select>
+          <div class="icon-container arrow">
+            <i class="bi bi-arrow-bar-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="delete-warning hide blur" id="delete-warning">
+        <div class="delete_container">
+          <h1 class="title-warning">Do you want to delete all the tasks?</h1>
+          <div class="btn-approval">
+            <button class="agree" id="agree">Yes</button>
+            <button class="disagree" id="disagree">No</button>
+          </div>
         </div>
       </div>
       <ul class="list" id="list"></ul>
     </main>
 
     <footer class="funcs" id="footer">
-      <a href="#"><i class="bi bi-info-circle" style="font-size: 20px"></i></a>
+      <a href="#"
+        ><i
+          class="bi bi-info-circle"
+          data-action="info"
+          style="font-size: 20px"
+        ></i
+      ></a>
       <a href="#"><i class="bi bi-share" style="font-size: 20px"></i></a>
       <a href="#"><i class="bi bi-textarea-t" style="font-size: 20px"></i></a>
       <a href="#"

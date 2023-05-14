@@ -265,7 +265,7 @@ footer {
   align-items: center;
   width: 816px;
   height: 71px;
-  z-index: 5;
+  z-index: 10;
   // margin-left: 23.5%;
   & .bi {
     padding-right: 60px;
@@ -275,9 +275,10 @@ footer {
 // ==========SELECTOR====================
 .selector-container {
   position: relative;
-  padding-top: 20px;
+  padding-top: 25px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .sort-selector {
@@ -290,13 +291,18 @@ footer {
   box-shadow: 0px 5px 16px rgba(146, 140, 151, 0.25);
   border-radius: 10px;
 }
+
+.bi-arrow-bar-down {
+  position: absolute;
+  left: 64%;
+  top: 51%;
+}
+
 .option {
   box-shadow: 0px 5px 16px rgba(146, 140, 151, 0.25);
   border-radius: 10px;
 }
-.show {
-  display: block;
-}
+
 .hide {
   display: none;
   visibility: hidden;
@@ -307,15 +313,18 @@ footer {
 }
 
 // =======DELETE-ALL================
-.delete-warning {
-  position: absolute;
+.delete_container {
+  position: fixed;
+  top: 30%;
+  left: 33%;
   background-color: #af7a7a;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40vh;
+  width: 450px;
   max-width: 470px;
-  margin: 0 auto;
+  // margin: 0 auto;
   text-align: center;
   flex-direction: column;
   border-radius: 20px;
@@ -369,12 +378,55 @@ footer {
   color: #3e3b3b;
 }
 
-// .blur {
-//   position: absolute;
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(134, 168, 179, 0.65);
+  backdrop-filter: blur(2px);
+}
 
-//   left: 0px;
-//   top: 180px;
+.blur2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(134, 168, 179, 0.65);
+  backdrop-filter: blur(5px);
+}
 
-//   background: rgba(134, 168, 179, 0.65);
-//   backdrop-filter: blur(2px);
-// }
+//========INFO-TEXT==========
+.info-text {
+  z-index: 7;
+}
+.info-text__container {
+  position: fixed;
+  top: 11%;
+  left: 21.7%;
+
+  background-color: rgba(134, 168, 179, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74vh;
+  width: 120vh;
+  // text-align: center;
+  flex-direction: column;
+  border-radius: 20px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.title-representation {
+  margin-top: 15px;
+}
+.text-representation {
+  font-size: 18px;
+  margin-left: 35px;
+  margin-right: 25px;
+  margin-top: 20px;
+}

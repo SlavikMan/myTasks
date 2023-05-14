@@ -1,6 +1,6 @@
 import { dataBase, url } from "../index.js";
 // import { render } from "./render.js";
-import methodsAPI from "./apiMethods.js";
+import { methodsAPI } from "./apiMethods.js";
 import { button, list, todoInput, todoDesc, title } from "./elements.js";
 // const url = "http://localhost:3000/tasks";
 

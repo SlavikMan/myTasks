@@ -301,7 +301,7 @@ footer {
   align-items: center;
   width: 816px;
   height: 71px;
-  z-index: 5;
+  z-index: 10;
 }
 footer .bi {
   padding-right: 60px;
@@ -309,9 +309,10 @@ footer .bi {
 
 .selector-container {
   position: relative;
-  padding-top: 20px;
+  padding-top: 25px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .sort-selector {
@@ -327,13 +328,15 @@ footer .bi {
   border-radius: 10px;
 }
 
+.bi-arrow-bar-down {
+  position: absolute;
+  left: 64%;
+  top: 51%;
+}
+
 .option {
   box-shadow: 0px 5px 16px rgba(146, 140, 151, 0.25);
   border-radius: 10px;
-}
-
-.show {
-  display: block;
 }
 
 .hide {
@@ -345,15 +348,17 @@ footer .bi {
   position: relative;
 }
 
-.delete-warning {
-  position: absolute;
+.delete_container {
+  position: fixed;
+  top: 30%;
+  left: 33%;
   background-color: #af7a7a;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40vh;
+  width: 450px;
   max-width: 470px;
-  margin: 0 auto;
   text-align: center;
   flex-direction: column;
   border-radius: 20px;
@@ -404,4 +409,59 @@ footer .bi {
   font-size: 18px;
   line-height: 29px;
   color: #3e3b3b;
+}
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(134, 168, 179, 0.65);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.blur2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(134, 168, 179, 0.65);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.info-text {
+  z-index: 7;
+}
+
+.info-text__container {
+  position: fixed;
+  top: 11%;
+  left: 21.7%;
+  background-color: rgba(134, 168, 179, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74vh;
+  width: 120vh;
+  flex-direction: column;
+  border-radius: 20px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.title-representation {
+  margin-top: 15px;
+}
+
+.text-representation {
+  font-size: 18px;
+  margin-left: 35px;
+  margin-right: 25px;
+  margin-top: 20px;
 }/*# sourceMappingURL=style.css.map */

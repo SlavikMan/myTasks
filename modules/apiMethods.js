@@ -1,4 +1,4 @@
-function methodsAPI(method, url, obj) {
+export function methodsAPI(method, url, obj) {
   //Get, Delete -  url, id
   return new Promise((resolve, reject) => {
     if (method === "DELETE" || method === "GET") {
@@ -24,4 +24,3 @@ function methodsAPI(method, url, obj) {
     }
   });
 }
-module.exports = methodsAPI;

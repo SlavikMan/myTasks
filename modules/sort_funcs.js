@@ -1,5 +1,5 @@
 import { dataBase, url } from "../index.js";
-import methodsAPI from "./apiMethods.js";
+import { methodsAPI } from "./apiMethods.js";
 import { renderOptions, renderFiltered } from "./render_funtions.js";
 import {
   button,
@@ -9,14 +9,14 @@ import {
   title,
   main,
   selector,
+  selector_container,
 } from "./elements.js";
 
 let sortedTasks = [];
 
 export function showSelector(event) {
   if (event.target.dataset.action !== "filter") return;
-  selector.classList.toggle("hide");
-  selector.classList.toggle("show");
+  selector_container.classList.toggle("hide");
   renderOptions();
 }
 

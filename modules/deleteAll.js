@@ -1,31 +1,34 @@
 import {
-  button,
-  list,
-  todoInput,
-  todoDesc,
-  title,
-  main,
-  selector,
   delete_warn,
+  disagree_btn,
+  agree_btn,
+  main,
+  info,
+  infoText,
 } from "./elements.js";
-import methodsAPI from "./apiMethods.js";
+import { methodsAPI } from "./apiMethods.js";
 import { dataBase, url } from "../index.js";
-let sortedTasks = [];
 
 export function showDeletedAll(event) {
   if (event.target.dataset.action !== "deleteAll") return;
-  sortedTasks = [];
+  delete_warn.classList.toggle("hide");
+}
+
+export function agreeDeleteTasks() {
   dataBase.forEach((task) => {
     methodsAPI("DELETE", url + `/${task.id}`);
   });
-
-  renderFiltered(sortedTasks);
+}
+export function disagreeDeleteTasks(event) {
+  delete_warn.classList.toggle("hide");
 }
 
-// add here show warninig function
-
-export function deleteTasks(event) {
-  if (event.target.dataset.action !== "deleteAll") return;
-  delete_warn.classList.toggle("hide");
-  delete_warn.classList.toggle("show");
+export function showInfo(event) {
+  if (event.target.dataset.action !== "info") return;
+  infoText.classList.toggle("blur2");
+  infoText.classList.toggle("hide");
+  // infoText.addEventListener("blur", () => {
+  //   infoText.classList.toggle("blur2");
+  //   infoText.classList.toggle("hide");
+  // });
 }
