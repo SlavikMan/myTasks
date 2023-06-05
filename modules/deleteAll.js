@@ -57,86 +57,99 @@ let iter = 0;
 
 export function nextSlide(event) {
   if (event.target.dataset.action !== "next") return;
-  if (iter === arraySlides.length) {
-    iter = 0;
+  if (dataBase.length === 0) {
+    slider.innerHTML = "";
+    const renderSlide = `<div class="slide" id="slide"> Add some task firt</div> `;
+    slider.innerHTML += renderSlide;
+  } else {
+    if (iter === arraySlides.length) {
+      iter = 0;
+    }
+
+    slider.innerHTML = "";
+    if (iter === 0) {
+      // slider.style.top = "25px";
+      heart.classList.add("hide");
+
+      arrowAdd.classList.toggle("hide");
+    } else if (iter === 1) {
+      arrowAdd.classList.toggle("hide");
+      arrowReset.classList.toggle("hide");
+    } else if (iter === 2) {
+      arrowReset.classList.toggle("hide");
+      arrowEdit.classList.toggle("hide");
+    } else if (iter === 3) {
+      arrowEdit.classList.toggle("hide");
+      arrowCheck.classList.toggle("hide");
+    } else if (iter === 4) {
+      arrowCheck.classList.toggle("hide");
+      arrowSort.classList.toggle("hide");
+    } else if (iter === 5) {
+      arrowSort.classList.toggle("hide");
+      heart.classList.toggle("hide");
+    }
+
+    const renderSlide = `<div class="slide" id="slide"> ${arraySlides[iter]}</div> `;
+    slider.innerHTML += renderSlide;
+
+    iter += 1;
   }
-
-  slider.innerHTML = "";
-  if (iter === 0) {
-    // slider.style.top = "25px";
-    heart.classList.add("hide");
-
-    arrowAdd.classList.toggle("hide");
-  } else if (iter === 1) {
-    arrowAdd.classList.toggle("hide");
-    arrowReset.classList.toggle("hide");
-  } else if (iter === 2) {
-    arrowReset.classList.toggle("hide");
-    arrowEdit.classList.toggle("hide");
-  } else if (iter === 3) {
-    arrowEdit.classList.toggle("hide");
-    arrowCheck.classList.toggle("hide");
-  } else if (iter === 4) {
-    arrowCheck.classList.toggle("hide");
-    arrowSort.classList.toggle("hide");
-  } else if (iter === 5) {
-    arrowSort.classList.toggle("hide");
-    heart.classList.toggle("hide");
-  }
-  const renderSlide = `<div class="slide" id="slide"> ${arraySlides[iter]}</div> `;
-  slider.innerHTML += renderSlide;
-
-  iter += 1;
 }
 
 export function prevSlide(event) {
   if (event.target.dataset.action !== "prev") return;
-  if (iter === 0) {
-    iter = arraySlides.length;
+  if (dataBase.length === 0) {
+    slider.innerHTML = "";
+    const renderSlide = `<div class="slide" id="slide"> Add some task firt</div> `;
+    slider.innerHTML += renderSlide;
+  } else {
+    if (iter === 0) {
+      iter = arraySlides.length;
+    }
+
+    if (iter === 0) {
+      // slider.style.top = "25px";
+      console.log(iter);
+      arrowReset.classList.add("hide");
+
+      heart.classList.add("hide");
+      arrowAdd.classList.toggle("hide");
+    } else if (iter === 1) {
+      console.log(iter);
+      heart.classList.add("hide");
+
+      arrowReset.classList.toggle("hide");
+    } else if (iter === 2) {
+      console.log(iter);
+      heart.classList.add("hide");
+      arrowAdd.classList.add("hide");
+
+      arrowReset.classList.toggle("hide");
+      arrowEdit.classList.toggle("hide");
+    } else if (iter === 3) {
+      console.log(iter);
+      heart.classList.add("hide");
+      arrowAdd.classList.add("hide");
+
+      arrowEdit.classList.toggle("hide");
+      arrowCheck.classList.toggle("hide");
+    } else if (iter === 4) {
+      console.log(iter);
+      heart.classList.add("hide");
+
+      arrowCheck.classList.toggle("hide");
+      arrowSort.classList.toggle("hide");
+    } else if (iter === 5) {
+      console.log(iter);
+      arrowAdd.classList.add("hide");
+
+      arrowSort.classList.toggle("hide");
+      heart.classList.toggle("hide");
+    }
+
+    iter -= 1;
+    slider.innerHTML = "";
+    const renderSlide = `<div class="slide" id="slide"> ${arraySlides[iter]}</div> `;
+    slider.innerHTML += renderSlide;
   }
-
-  if (iter === 0) {
-    // slider.style.top = "25px";
-    console.log(iter);
-    arrowReset.classList.add("hide");
-
-    heart.classList.add("hide");
-    arrowAdd.classList.toggle("hide");
-  } else if (iter === 1) {
-    console.log(iter);
-    heart.classList.add("hide");
-
-    arrowReset.classList.toggle("hide");
-  } else if (iter === 2) {
-    console.log(iter);
-    heart.classList.add("hide");
-    arrowAdd.classList.add("hide");
-
-    arrowReset.classList.toggle("hide");
-    arrowEdit.classList.toggle("hide");
-  } else if (iter === 3) {
-    console.log(iter);
-    heart.classList.add("hide");
-    arrowAdd.classList.add("hide");
-
-    arrowEdit.classList.toggle("hide");
-    arrowCheck.classList.toggle("hide");
-  } else if (iter === 4) {
-    console.log(iter);
-    heart.classList.add("hide");
-
-    arrowCheck.classList.toggle("hide");
-    arrowSort.classList.toggle("hide");
-  } else if (iter === 5) {
-    console.log(iter);
-    arrowAdd.classList.add("hide");
-
-    arrowSort.classList.toggle("hide");
-    heart.classList.toggle("hide");
-  }
-
-  iter -= 1;
-  slider.innerHTML = "";
-  const renderSlide = `<div class="slide" id="slide"> ${arraySlides[iter]}</div> `;
-  slider.innerHTML += renderSlide;
 }

@@ -20,7 +20,6 @@ export function addTask(event) {
   todoInput.value = "";
   todoDesc.value = "";
 }
-
 export function onCheck(event) {
   if (event.target.dataset.action !== "check") return;
   const taskElement = event.target.closest(".list__task");
@@ -34,6 +33,7 @@ export function onCheck(event) {
 export function deleteTask(event) {
   event.preventDefault();
   if (event.target.dataset.action !== "delete") return;
+
   let taskTitle = event.target.closest(".list__task");
   let taskId = parseInt(taskTitle.getAttribute("key"));
   const taskIndex = dataBase.findIndex((task) => task.id === taskId);

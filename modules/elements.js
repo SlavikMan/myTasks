@@ -31,3 +31,4 @@ export const arrowEdit = document.getElementById("arrowEdit");
 export const arrowCheck = document.getElementById("arrowCheck");
 export const arrowSort = document.getElementById("arrowSort");
 export const heart = document.getElementById("heart");
+export const rainbow = document.getElementById("rainbow");
