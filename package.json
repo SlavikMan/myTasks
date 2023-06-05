@@ -23,5 +23,8 @@
   "homepage": "https://github.com/SlavikMan/myTasks#readme",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.1"
   }
 }

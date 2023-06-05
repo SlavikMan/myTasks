@@ -7,9 +7,27 @@ export const footer = document.getElementById("footer");
 export const main = document.getElementById("main");
 export const selector = document.getElementById("sort-selector");
 export const selector_container = document.getElementById("selector-container");
+export const size_selector = document.getElementById("size_selector");
+export const color_selector = document.getElementById("color_selector");
+export const size_container = document.getElementById("style_container__size");
+export const color_container = document.getElementById(
+  "style_container__color"
+);
 export const delete_warn = document.getElementById("delete-warning");
 export const disagree_btn = document.getElementById("disagree");
 export const agree_btn = document.getElementById("agree");
 export const info = document.getElementById("info_conatiner");
 export const infoText = document.getElementById("info_text");
 export const AZ = document.getElementById("AZ");
+export const slider = document.getElementById("slides");
+export const slide = document.getElementById("slide");
+export const firstSlide = document.querySelectorAll(".slide")[0];
+export const prev = document.getElementById("prev");
+export const next = document.getElementById("next");
+export const fullSlider = document.getElementById("slider");
+export const arrowAdd = document.getElementById("arrowAdd");
+export const arrowReset = document.getElementById("arrowReset");
+export const arrowEdit = document.getElementById("arrowEdit");
+export const arrowCheck = document.getElementById("arrowCheck");
+export const arrowSort = document.getElementById("arrowSort");
+export const heart = document.getElementById("heart");

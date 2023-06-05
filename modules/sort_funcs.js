@@ -1,6 +1,6 @@
 import { dataBase, url } from "../index.js";
 import { methodsAPI } from "./apiMethods.js";
-import { renderOptions, renderFiltered } from "./render_funtions.js";
+import { renderOptions, renderFiltered, render } from "./render_funtions.js";
 import {
   button,
   list,
@@ -10,6 +10,10 @@ import {
   main,
   selector,
   selector_container,
+  size_container,
+  color_container,
+  size_selector,
+  color_selector,
 } from "./elements.js";
 
 let sortedTasks = [];
@@ -40,4 +44,17 @@ export function SortTasks() {
     });
   }
   renderFiltered(sortedTasks);
+}
+
+export function showStyleSelector(event) {
+  if (event.target.dataset.action !== "style") return;
+  size_container.classList.toggle("hide");
+  color_container.classList.toggle("hide");
+}
+
+export function changeFontSize(event) {
+  const selectorValue = size_selector.value;
+  if (selectorValue === "13") {
+    console.log(title.style.fontSize);
+  }
 }

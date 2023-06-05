@@ -1,10 +1,17 @@
 import { render } from "./modules/render_funtions.js";
-import { showSelector, SortTasks } from "./modules/sort_funcs.js";
+import {
+  showSelector,
+  SortTasks,
+  showStyleSelector,
+  changeFontSize,
+} from "./modules/sort_funcs.js";
 import {
   showDeletedAll,
   agreeDeleteTasks,
   disagreeDeleteTasks,
   showInfo,
+  nextSlide,
+  prevSlide,
 } from "./modules/deleteAll.js";
 import { methodsAPI } from "./modules/apiMethods.js";
 import {
@@ -23,7 +30,15 @@ import {
   selector,
   agree_btn,
   disagree_btn,
+  size_selector,
+  size_container,
+  color_container,
+  next,
+  prev,
 } from "./modules/elements.js";
+
+// import { showStyleSelector } from "./modules/styleShow.js";
+// import { showStyleSelector } from "./modules/styleSelector.js";
 
 list.addEventListener("click", onCheck);
 button.addEventListener("submit", addTask);
@@ -35,7 +50,10 @@ footer.addEventListener("click", showDeletedAll);
 agree_btn.addEventListener("click", agreeDeleteTasks);
 disagree_btn.addEventListener("click", disagreeDeleteTasks);
 footer.addEventListener("click", showInfo);
-
+footer.addEventListener("click", showStyleSelector);
+size_selector.addEventListener("click", changeFontSize);
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlide);
 // localStorage // балкон
 
 const dataBase = []; // storage    холодильник
